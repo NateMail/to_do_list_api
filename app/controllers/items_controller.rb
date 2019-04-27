@@ -18,7 +18,7 @@ class ItemsController < ProtectedController
 
   # POST /items
   def create
-    @item = current_user.items.build(cart_params)
+    @item = current_user.items.build(item_params)
 
     if @item.save
       render json: @item, status: :created
